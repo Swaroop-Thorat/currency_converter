@@ -27,7 +27,7 @@ async function convert(){
 
   const rate=data.conversion_rates[To];
   const display = rate * Value;
-  show.textContent=`${To} ${display.toFixed(2)}`;
+  show.textContent=`${To} ${display.toFixed(5)}`;
   console.log(data);
 }
 catch(error){
