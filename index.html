@@ -4,31 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Exchange</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <div class="grid">
-            <div class="item1">
-                <h3>From:</h3>
-                <input type="text" id="from" placeholder="Currency">
+    <header class="header">
+        <div class="logo">
+            <span class="logo-text">ex</span>rates
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="widget">
+            <div class="widget-header">
+                <h1>Exchange currency<br>rates widget</h1>
+                <p>Check live foreign currency exchange rates</p>
             </div>
-            <div class="item2">
-                <h3>Value:</h3>
-                <input type="number" id="val" placeholder="Value">
+
+            <div class="widget-body">
+                <div class="exchange-form">
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="val">You Have</label>
+                            <input type="number" id="val" value="1" min="0">
+                        </div>
+                        <select id="from">
+                            <option value="USD" selected>USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CNY">CNY</option>
+                            <option value="HKD">HKD</option>
+                            <option value="NZD">NZD</option>
+                            <option value="INR">INR</option>
+                            <option value="UAH">UAH</option>
+                        </select>
+                    </div>
+
+                    <button class="swap-btn" id="swap">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"></path><path d="M15 14v-12"></path><path d="M3 14l4 4 4-4"></path><path d="M19 10l-4-4-4 4"></path></svg>
+                    </button>
+
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="show">Converted to</label>
+                            <input type="text" id="show" readonly>
+                        </div>
+                        <select id="to">
+                            <option value="EUR">EUR</option>
+                            <option value="USD">USD</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CNY">CNY</option>
+                            <option value="HKD">HKD</option>
+                            <option value="NZD">NZD</option>
+                            <option value="INR" selected>INR</option>
+                            <option value="UAH">UAH</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="rate-info">
+                    <p id="rate-text">1.00000 USD = 41.34 UAH</p>
+                    <p class="rate-time">Mid-market exchange rate</p>
+                </div>
+                
+                <button class="convert-btn" id="but">Convert</button>
+
+                <div class="info-footer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="info-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <p>We use the mid-market rate for our Converter. This is for informational purposes only. You won't receive this rate when sending money.</p>
+                </div>
             </div>
-            <div class="item3">
-                <h3>To:</h3>
-                <input type="text" id="to" placeholder="Currency">
-            </div>
-            <div class="item4">
-                <button id="but">Convert</button>
-                <h2 id="show">--</h2>
+        </div>
+
+        <div class="popular-conversions">
+            <h2>Popular conversions</h2>
+            <div class="conversions-list" id="popular-list">
             </div>
         </div>
     </main>
-    
-<script src="env.js"></script>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
